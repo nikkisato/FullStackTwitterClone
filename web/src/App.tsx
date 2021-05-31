@@ -12,6 +12,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { setContext } from 'apollo-link-context';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
+import IsAuthenticated from './components/IsAuthenticated';
 //const client = new ApolloClient({
 //  uri: 'http://localhost:4000',
 //  cache: new InMemoryCache(),
@@ -50,9 +51,12 @@ function App() {
           <Route path='/login'>
             <Login />
           </Route>
-          <Route path='/'>
-            <Users />
-          </Route>
+
+          <IsAuthenticated>
+            <Route path='/users'>
+              <Users />
+            </Route>
+          </IsAuthenticated>
         </Switch>
       </Router>
     </ApolloProvider>
