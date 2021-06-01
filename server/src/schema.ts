@@ -328,6 +328,17 @@ const AuthPayload = objectType({
   },
 })
 
+const Profile = objectType({
+  name: 'Profile',
+  definition(t) {
+    t.nonNull.int('id')
+    t.nonNull.string('title')
+    t.string('content')
+    t.nonNull.boolean('published')
+    t.nonNull.int('viewCount')
+  },
+})
+
 const schemaWithoutPermissions = makeSchema({
   types: [
     Query,
