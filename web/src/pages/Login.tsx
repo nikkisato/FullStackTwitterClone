@@ -38,7 +38,7 @@ function Login() {
   });
 
   return (
-    <div>
+    <div className='container'>
       <img
         src={TwitterLogo}
         alt='twitter logo'
